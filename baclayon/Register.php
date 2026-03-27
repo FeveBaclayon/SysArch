@@ -393,6 +393,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         <?php endif; ?>
                     </div>
 
+                    <div class="input-wrapper">
+                        <label class="form-label">Course</label>
+                        <select class="form-select <?php echo isset($field_errors['course']) ? 'is-invalid' : ''; ?>" name="course">
+                            <option value="">Select Course</option>
+                            <option value="BSIT" <?php echo ($course=='BSIT') ? 'selected' : ''; ?>>BSIT</option>
+                            <option value="BSCS" <?php echo ($course=='BSCS') ? 'selected' : ''; ?>>BSCS</option>
+                            <option value="CSCIE" <?php echo ($course=='CSCIE') ? 'selected' : ''; ?>>CSCIE</option>
+                            <option value="CST" <?php echo ($course=='CST') ? 'selected' : ''; ?>>CST</option>
+                        </select>
+                        <?php if(isset($field_errors['course'])): ?>
+                            <span class="error-bubble"><?php echo $field_errors['course']; ?></span>
+                        <?php endif; ?>
+                    </div>
+
                     <!-- Password -->
                     <div class="input-wrapper">
                         <label class="form-label">Password</label>
@@ -421,19 +435,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     </div>
 
                     <!-- Course -->
-                    <div class="input-wrapper">
-                        <label class="form-label">Course</label>
-                        <select class="form-select <?php echo isset($field_errors['course']) ? 'is-invalid' : ''; ?>" name="course">
-                            <option value="">Select Course</option>
-                            <option value="BSIT" <?php echo ($course=='BSIT') ? 'selected' : ''; ?>>BSIT</option>
-                            <option value="BSCS" <?php echo ($course=='BSCS') ? 'selected' : ''; ?>>BSCS</option>
-                            <option value="CSCIE" <?php echo ($course=='CSCIE') ? 'selected' : ''; ?>>CSCIE</option>
-                            <option value="CST" <?php echo ($course=='CST') ? 'selected' : ''; ?>>CST</option>
-                        </select>
-                        <?php if(isset($field_errors['course'])): ?>
-                            <span class="error-bubble"><?php echo $field_errors['course']; ?></span>
-                        <?php endif; ?>
-                    </div>
+                    
 
                     <!-- Address -->
                     <div class="input-wrapper">
